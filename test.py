@@ -11,12 +11,16 @@ commentaire plusieurs lignes
 
 #commentaire une ligne
 
+'''
+
 print("la variable contient", variable1, "et c'est bien")
 
 print("abc"+"def")
 
 mastring="abc"+str(3)
 print(mastring)
+
+'''
 
 '''
     entree=input("date de naissance?\n")
@@ -58,6 +62,7 @@ else:
     print("la moyenne est",somme)
 '''
 
+'''
 for i in range(0,10):
     print(i*i)
 
@@ -70,3 +75,86 @@ for i in range(0,4):
     
 
 print(somme)
+'''
+
+
+'''
+def mafonction(param1,param2):
+    variable=param1+param2
+    return variable
+
+print(mafonction(1,1))
+
+def affiche_zero():
+    print(0)
+
+affiche_zero()
+z = affiche_zero()
+print(z)
+'''
+
+'''
+def majeur(annee):
+    if 2021-annee >= 18:
+        return "majeur"
+    return "mineur"
+
+print(majeur(2020))
+print(majeur(2000))
+
+def fonction(nb1,nb2):
+    if nb1<nb2:
+        return nb1+nb2
+    return nb1*nb2
+
+print(fonction(1,2))
+print(fonction(2,1))
+
+def verifAnneeAge(annee,age):
+    return 2021-annee == age
+
+print(verifAnneeAge(2000,21))
+print(verifAnneeAge(2005,20))
+'''
+
+'''
+def occruence(string):
+    cpt=0
+    for i in string:
+        if(i == "e"):
+            cpt+=1
+    return cpt
+print(occruence("eeeeee"))
+print(occruence("nombre"))
+
+def voyelles(string1,string2):
+    cpt1=0
+    cpt2=0
+    vowels = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U","y","Y"}
+    for char in string1:
+        if any(char in vowels for char in string1):
+            cpt1=+1
+    for char in string2:
+        if any(char in vowels for char in string2):
+            cpt2=+1
+    return cpt1 > cpt2
+    
+print(voyelles("qsdf","azertyuio"))
+'''
+'''
+liste=[]
+for i in range(3):
+    entree=input("entrez une chaine de caractere\n")
+    liste.append(entree)
+
+print()
+print(liste)
+'''
+liste2=[]
+entree="0"
+while entree!="stop":
+    liste2.append(int(entree))
+    entree=input("entrez un nombre\n")
+
+liste2.remove(0)
+print(liste2)
