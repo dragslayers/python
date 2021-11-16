@@ -149,7 +149,7 @@ for i in range(3):
 
 print()
 print(liste)
-'''
+
 liste2=[]
 entree="0"
 while entree!="stop":
@@ -158,3 +158,79 @@ while entree!="stop":
 
 liste2.remove(0)
 print(liste2)
+'''
+'''
+liste=[3,6,2,8,4,3,4,9,3,-2,-1,3]
+
+def minimum(liste):
+    res_min = liste[0]
+    for elements in liste:
+        if(res_min > elements):
+            res_min = elements
+    return res_min        
+
+print(minimum(liste))
+
+def somme(liste):
+    resultat=0
+    for elements in liste:
+        resultat+=elements
+    return resultat
+
+print(somme(liste))
+
+def compte(liste, valeur):
+    cpt=0
+    for elements in liste:
+        if elements==valeur:
+            cpt+=1
+    return cpt
+
+print(compte(liste,3))
+
+def tous_positifs(liste):
+    for elements in liste:
+        if elements < 0:
+            return False
+    return True
+
+print(tous_positifs(liste))
+
+def test(a):
+    if a:
+        return True
+
+print(test(False))
+'''
+
+def divisible(d,n):
+    return d%n == 0
+     
+print(divisible(12,6))
+print(divisible(12,7))
+
+
+def diviseur(n):
+    liste=[]
+    for i in range(1,n+1):
+        if divisible(n,i):
+            liste.append(i)
+
+    return liste
+
+print(diviseur(10))
+
+def premier(n):
+    return len(diviseur(n)) == 2
+
+print(premier(10))
+print(premier(7))
+
+def listepremier():
+    liste=[]
+    for i in range(0,100):
+        if premier(i):
+            liste.append(i)
+    return liste
+
+print(listepremier())
