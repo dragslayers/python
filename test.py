@@ -275,6 +275,8 @@ for nom in classe2:
     classe3[nom] = sum(classe2[nom])/len(classe2[nom])
 print(classe3)
 '''
+
+'''
 import random
 
 def piece():
@@ -300,3 +302,45 @@ def jeurandom():
     print(nbr)
 
 jeurandom()
+'''
+'''
+import matplotlib.pyplot as plt
+
+abscisses = [0,1,5,3,6,9]
+ordonnes = [6,8,5,1,5,3]
+
+plt.plot(abscisses,ordonnes,"ro--")
+
+plt.show()
+plt.savefig("figure.png")
+'''
+
+with open("monfichier.txt","w") as fichier:
+    fichier.write("Bonjour")
+
+import random
+
+promo={}
+noms=["Joe","William","Jack","Averell","crotte"]
+for i in range (len(noms)):
+    promo[noms[i]] = random.randint(0,20)
+
+print(promo)
+
+with open("notes.txt","w") as fichier:
+    for i in promo:
+        fichier.write(i+"\n")
+        fichier.write(str(promo[i])+"\n")
+with open("notes.txt","r") as fichier:
+    print(fichier.read())
+
+newpromo={}
+
+with open("notes.txt","r") as fichier:
+    l=fichier.read().splitlines()
+print(l)
+
+for i in range(0,len(l),2):
+    newpromo[l[i]]=int(l[i+1])
+print(newpromo)
+print(newpromo == promo)
