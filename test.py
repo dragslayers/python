@@ -202,6 +202,7 @@ def test(a):
 
 print(test(False))
 '''
+'''
 
 def divisible(d,n):
     return d%n == 0
@@ -218,13 +219,13 @@ def diviseur(n):
 
     return liste
 
-print(diviseur(10))
+print(diviseur(1))
 
 def premier(n):
     return len(diviseur(n)) == 2
 
 print(premier(10))
-print(premier(7))
+print(premier(1))
 
 def listepremier():
     liste=[]
@@ -234,3 +235,68 @@ def listepremier():
     return liste
 
 print(listepremier())
+'''
+'''
+classe={}
+for i in range (3):
+    nom=input("entrez un nom\n")
+    note=input("entrez une note\n")
+    classe[nom] = note
+moyenne=0
+for cle in classe:
+    moyenne += int(classe[cle])
+
+print(moyenne/3)
+
+
+classe2={}
+noms=["Joe","William","Jack","Averell"]
+
+notes=[ [13,17,15,15,13],[12,15,13,12], [11,15,17,14,11,13], [5,8,7,5,6]]
+
+for i in range (len(noms)):
+    classe2[noms[i]] = notes[i]
+print(classe2)
+
+
+classe3={}
+for i in range (len(noms)):
+    moyenne=0
+    for j in range(len(notes[i])):
+        moyenne+=notes[i][j]
+    moyenne/=len(notes[i])
+    classe3[noms[i]] = moyenne
+print(classe3)
+
+
+for nom in classe2:
+    print(classe2[nom])
+    print(sum(classe2[nom]))
+    classe3[nom] = sum(classe2[nom])/len(classe2[nom])
+print(classe3)
+'''
+import random
+
+def piece():
+    liste=["pile","face"]
+    print(random.choice(liste))
+piece()
+
+
+def jeurandom():
+    nbr = random.randint(1,100)
+    cpt=0
+    entree=int(input("devine le nombre\n"))
+    while entree !=nbr:
+        if(entree > nbr):
+            print("plus bas")
+            entree=int(input("devine le nombre\n"))
+        else:
+            print("plus haut")
+            entree=int(input("devine le nombre\n"))
+        cpt+=1
+
+    print("bravo vous avez trouvé en",cpt,"coups\n")
+    print(nbr)
+
+jeurandom()
