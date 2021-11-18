@@ -416,4 +416,7 @@ canvas2.grid()
 canvas2.create_line(410,0,0,200,fill="white",width=30)
 canvas2.create_line(0,0,410,200,fill="white",width=30)
 
+grille=[[0,0,0],[0,0,0],[0,0,0]]
+if(grille[]
+
 tk.mainloop()
