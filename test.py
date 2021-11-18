@@ -314,7 +314,7 @@ plt.plot(abscisses,ordonnes,"ro--")
 plt.show()
 plt.savefig("figure.png")
 '''
-
+'''
 with open("monfichier.txt","w") as fichier:
     fichier.write("Bonjour")
 
@@ -344,3 +344,76 @@ for i in range(0,len(l),2):
     newpromo[l[i]]=int(l[i+1])
 print(newpromo)
 print(newpromo == promo)
+'''
+'''
+import tkinter as tk
+fenetre = tk.Tk()
+fenetre.title("my prog")
+
+texte = tk.StringVar("")
+texte2 = tk.StringVar("")
+texte3 = tk.StringVar("")
+
+label1 = tk.Label(fenetre,text="nombre de clics : 0")
+label1.grid()
+nb_clics=0
+
+entry1 = tk.Entry(fenetre,textvariable=texte)
+entry1.grid()
+
+label2 = tk.Label(fenetre,textvariable=texte)
+label2.grid()
+
+
+def clic_bouton():
+    global nb_clics
+    nb_clics+=1
+    label1.config(text="nombre de clics : "+str(nb_clics))
+
+def clic_reset():
+    global nb_clics
+    nb_clics=0
+    label1.config(text="nombre de clics : "+str(nb_clics))
+
+bouton1 = tk.Button(fenetre, text="clique moi",command=clic_bouton)
+bouton1.grid(row=2,column=1)
+bouton2 = tk.Button(fenetre, text="reset",command=clic_reset)
+bouton2.grid(row=2,column=2)
+
+label3 = tk.Label(fenetre,text="prenom")
+label3.grid(row=4,column=0)
+
+label3 = tk.Label(fenetre,text="mdp")
+label3.grid(row=4,column=1)
+
+entry2 = tk.Entry(fenetre,textvariable=texte2)
+entry2.grid(row=5,column=0)
+entry3 = tk.Entry(fenetre,textvariable=texte3)
+entry3.grid(row=5,column=1)
+
+bouton3 = tk.Button(fenetre, text="ok",command=clic)
+bouton3.grid(row=5,column=2)
+
+label4 = tk.Label(fenetre,text="entrez ton prénom et clique")
+label4.grid(row=6,column=0,columnspan=3)
+
+tk.mainloop()
+'''
+
+
+import tkinter as tk
+
+fenetre = tk.Tk()
+
+canvas = tk.Canvas(fenetre,width=400,height=200,background="white")
+canvas.grid()
+
+canvas.create_line(200,0,200,200,fill="blue",width=5)
+
+canvas2 = tk.Canvas(fenetre,width=400,height=200,background="blue")
+canvas2.grid()
+
+canvas2.create_line(410,0,0,200,fill="white",width=30)
+canvas2.create_line(0,0,410,200,fill="white",width=30)
+
+tk.mainloop()
