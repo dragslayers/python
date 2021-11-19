@@ -1,4 +1,7 @@
 import tkinter as tk
+import os
+import sys
+import subprocess
 
 fenetre = tk.Tk()
 fenetre.title("Morpion")
@@ -10,10 +13,10 @@ canvas = tk.Canvas(fenetre,width=3*taille_case,height=3*taille_case,
                    background="white")
 canvas.grid(row=1,column=1)
 
-canvas.create_line(taille_case,0,taille_case,3*taille_case)
-canvas.create_line(2*taille_case,0,2*taille_case,3*taille_case)
-canvas.create_line(0,taille_case,3*taille_case,taille_case)
-canvas.create_line(0,2*taille_case,3*taille_case,2*taille_case)
+canvas.create_line(taille_case,0,taille_case,3*taille_case,width=5)
+canvas.create_line(2*taille_case,0,2*taille_case,3*taille_case,width=5)
+canvas.create_line(0,taille_case,3*taille_case,taille_case,width=5)
+canvas.create_line(0,2*taille_case,3*taille_case,2*taille_case,width=5)
 
 label=tk.Label(fenetre)
 label.grid(row=2,column=1)
@@ -73,6 +76,12 @@ def alignement(ligne,colonne):
         return True
     
     return False
+
+def resetAll():
+    
+    fenetre.destroy()
+    subprocess.call([sys.executable, os.path.realpath(__file__)] +
+                    sys.argv[1:]) #restart the program
     
     
 #représente l'état du jeu à un instant donné
@@ -101,6 +110,10 @@ def clic(evenement):
             label.config(text="Victoire !")
             #on désactive le clic
             canvas.unbind("<Button-1>")
+            
+            bouton1 = tk.Button(fenetre,text="rejouer",command=resetAll)
+            bouton1.grid(row=1,column=1)
+            
         elif tour==8:#égalité
             label.config(text="Match nul !")
             #on désactive le clic
