@@ -34,3 +34,4 @@ for i in range(4):
     somme+=float(input("Entre un nombre "))
 print(somme)
 
+'''testsetets'''
